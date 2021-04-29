@@ -19,7 +19,7 @@ QUEUE_DATA_TYPE q_pop(Queue* queue) {
 }
 
 bool q_is_empty(Queue* queue) {
-	return queue->size == 0;
+	return ll_is_empty(queue);
 }
 
 void q_clean(Queue* queue) {

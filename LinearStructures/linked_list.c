@@ -1,6 +1,5 @@
 #include "pch.h"
 #include <stdlib.h>
-#include "linked_list.h"
 
 LinkedList* ll_init_list() {
 	LinkedList* new_list = (LinkedList*)malloc(sizeof(LinkedList));
@@ -97,6 +96,10 @@ LinkedListNode* ll_add_tail(LinkedList* list, LL_DATA_TYPE data) {
 	list->size++;
 
 	return new_node;
+}
+
+bool ll_is_empty(LinkedList* list) {
+	return list->size == 0;
 }
 
 void ll_clean(LinkedList* list) {

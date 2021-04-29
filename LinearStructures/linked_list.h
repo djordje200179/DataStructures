@@ -1,6 +1,8 @@
 #ifndef LINKED_LIST
 #define LINKED_LIST
 
+#include <stdbool.h>
+
 typedef void* LL_DATA_TYPE;
 
 typedef struct LinkedListNode {
@@ -24,6 +26,8 @@ LinkedListNode* ll_add_at(LinkedList* list, unsigned long index, LL_DATA_TYPE da
 LinkedListNode* ll_add_after(LinkedList* list, LinkedListNode* prev_node, LL_DATA_TYPE data);
 LinkedListNode* ll_add_head(LinkedList* list, LL_DATA_TYPE data);
 LinkedListNode* ll_add_tail(LinkedList* list, LL_DATA_TYPE data);
+
+bool ll_is_empty(LinkedList* list);
 
 void ll_clean(LinkedList* list);
 void ll_dispose(LinkedList* list);

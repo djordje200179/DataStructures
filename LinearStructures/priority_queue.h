@@ -6,13 +6,20 @@
 
 typedef void* PQ_DATA_TYPE;
 
+typedef struct PriorityQueueNode {
+	PQ_DATA_TYPE data;
+
+	int priority;
+} PriorityQueueNode;
+
 typedef LinkedList PriorityQueue;
 
 PriorityQueue* pq_init();
+PriorityQueueNode* pq_init_node(PQ_DATA_TYPE data, int priority);
 
-void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data);
-PQ_DATA_TYPE pq_peek(PriorityQueue* queue);
-PQ_DATA_TYPE pq_pop(PriorityQueue* queue);
+void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data, int priority);
+PriorityQueueNode* pq_peek(PriorityQueue* queue);
+PriorityQueueNode* pq_pop(PriorityQueue* queue);
 
 bool pq_is_empty(PriorityQueue* queue);
 

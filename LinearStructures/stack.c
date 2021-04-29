@@ -19,7 +19,7 @@ STACK_DATA_TYPE s_pop(Stack* stack) {
 }
 
 bool s_is_empty(Stack* stack) {
-	return stack->size == 0;
+	return ll_is_empty(stack);
 }
 
 void s_clean(Stack* stack) {
