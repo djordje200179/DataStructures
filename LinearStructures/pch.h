@@ -6,5 +6,6 @@
 #include "linked_list.h"
 #include "stack.h"
 #include "queue.h"
+#include "priority_queue.h"
 
 #endif //PCH_H
