@@ -3,8 +3,6 @@
 
 #define WIN32_LEAN_AND_MEAN 
 
-#include "linked_list.h"
-#include "stack.h"
-#include "queue.h"
+#include "binary_tree.h"
 
 #endif //PCH_H
