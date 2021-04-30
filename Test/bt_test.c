@@ -1,7 +1,6 @@
 #include "binary_tree.h"
+#include "misc.h"
 #include <stdio.h>
-
-void print_char(void* data);
 
 void bt_test() {
 	const char data[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
@@ -23,7 +22,6 @@ void bt_test() {
 	printf("\n");
 	printf("-postorder: ");
 	bt_iter_data_postorder(a, print_char);
-	printf("\n");
 	printf("\n");
 
 	bt_dispose(a);

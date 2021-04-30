@@ -1,7 +1,8 @@
 #include "linked_list.h"
+#include "misc.h"
 #include <stdio.h>
 
-void print_list_elem(void* data, unsigned long index); 
+void print_int_index(void* data, unsigned long index); 
 
 void ll_test() {
 	const int data[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
@@ -17,7 +18,7 @@ void ll_test() {
 
 	printf("Doubly linked list:\n");
 	printf("--head--\n");
-	ll_iter_data_index(list, print_list_elem);
+	ll_iter_data_index(list, print_int_index);
 	printf("---tail---\n");
 	printf("\n");
 

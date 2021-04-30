@@ -30,7 +30,7 @@ LinkedListNode* ll_init_node(LL_DATA_TYPE data) {
 LinkedListNode* ll_add_at(LinkedList* list, unsigned long index, LL_DATA_TYPE data) {
 	if (index == 0)
 		return ll_add_head(list, data);
-	if(index == list->size - 1)
+	else if(index == list->size - 1)
 		return ll_add_tail(list, data);
 	else {
 		LinkedListNode* new_node = ll_init_node(data);
@@ -52,14 +52,18 @@ LinkedListNode* ll_add_after(LinkedList* list, LinkedListNode* prev_node, LL_DAT
 	LinkedListNode* next_node = prev_node->next;
 	LinkedListNode* new_node = ll_init_node(data);
 
-	prev_node->next = new_node;
-	new_node->prev = prev_node;
-	new_node->next = next_node;
-	next_node->prev = new_node;
+	if(prev_node == list->tail)
+		return ll_add_tail(list, data);
+	else {
+		prev_node->next = new_node;
+		new_node->prev = prev_node;
+		new_node->next = next_node;
+		next_node->prev = new_node;
 
-	list->size++;
+		list->size++;
 
-	return new_node;
+		return new_node;
+	}
 }
 
 LinkedListNode* ll_add_head(LinkedList* list, LL_DATA_TYPE data) {

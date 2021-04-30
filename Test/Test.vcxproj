@@ -171,6 +171,7 @@
     <ClCompile Include="ll_test.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="misc.c" />
+    <ClCompile Include="pq_test.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LinearStructures\LinearStructures.vcxproj">
@@ -179,6 +180,10 @@
     <ProjectReference Include="..\Trees\Trees.vcxproj">
       <Project>{c6fbd733-e0ad-4a4e-be3a-e40865c54a64}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="misc.h" />
+    <ClInclude Include="tests.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,12 +1,11 @@
 #define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
 #include <crtdbg.h>
-
-void ll_test();
-void bt_test();
+#include "tests.h"
 
 int main() {
 	ll_test();
+	pq_test();
+
 	bt_test();
 
 	_CrtDumpMemoryLeaks();
