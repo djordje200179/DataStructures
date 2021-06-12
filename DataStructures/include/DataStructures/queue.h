@@ -10,11 +10,11 @@ typedef LinkedList Queue;
 
 Queue* q_init();
 
-void q_push(Queue* queue, QUEUE_DATA_TYPE data);
-QUEUE_DATA_TYPE q_peek(Queue* queue);
+void q_push(Queue* queue, const QUEUE_DATA_TYPE data);
+QUEUE_DATA_TYPE q_peek(const Queue* queue);
 QUEUE_DATA_TYPE q_pop(Queue* queue);
 
-bool q_is_empty(Queue* queue);
+bool q_is_empty(const Queue* queue);
 
 void q_clean(Queue* queue);
 void q_dispose(Queue* queue);

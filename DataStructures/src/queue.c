@@ -4,11 +4,11 @@ Queue* q_init() {
 	return ll_init();
 }
 
-void q_push(Queue* queue, QUEUE_DATA_TYPE data) {
+void q_push(Queue* queue, const QUEUE_DATA_TYPE data) {
 	ll_add_tail(queue, data);
 }
 
-QUEUE_DATA_TYPE q_peek(Queue* queue) {
+QUEUE_DATA_TYPE q_peek(const Queue* queue) {
 	return queue->head->data;
 }
 
@@ -18,7 +18,7 @@ QUEUE_DATA_TYPE q_pop(Queue* queue) {
 	return data;
 }
 
-bool q_is_empty(Queue* queue) {
+bool q_is_empty(const Queue* queue) {
 	return ll_is_empty(queue);
 }
 

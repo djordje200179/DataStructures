@@ -4,11 +4,11 @@ Stack* s_init() {
 	return ll_init();
 }
 
-void s_push(Stack* stack, STACK_DATA_TYPE data) {
+void s_push(Stack* stack, const STACK_DATA_TYPE data) {
 	ll_add_tail(stack, data);
 }
 
-STACK_DATA_TYPE s_peek(Stack* stack) {
+STACK_DATA_TYPE s_peek(const Stack* stack) {
 	return stack->tail->data;
 }
 
@@ -18,7 +18,7 @@ STACK_DATA_TYPE s_pop(Stack* stack) {
 	return data;
 }
 
-bool s_is_empty(Stack* stack) {
+bool s_is_empty(const Stack* stack) {
 	return ll_is_empty(stack);
 }
 

@@ -10,11 +10,11 @@ typedef LinkedList Stack;
 
 Stack* s_init();
 
-void s_push(Stack* stack, STACK_DATA_TYPE data);
-STACK_DATA_TYPE s_peek(Stack* stack);
+void s_push(Stack* stack, const STACK_DATA_TYPE data);
+STACK_DATA_TYPE s_peek(const Stack* stack);
 STACK_DATA_TYPE s_pop(Stack* stack);
 
-bool s_is_empty(Stack* stack);
+bool s_is_empty(const Stack* stack);
 
 void s_clean(Stack* stack);
 void s_dispose(Stack* stack);

@@ -1,7 +1,7 @@
 #include "pch.h"
 #include <stdlib.h>
 
-BinaryTreeNode* bt_init_node(BT_DATA_TYPE data) {
+BinaryTreeNode* bt_init_node(const BT_DATA_TYPE data) {
 	BinaryTreeNode* new_node = (BinaryTreeNode*)malloc(sizeof(BinaryTreeNode));
 
 	if(new_node) {
@@ -16,7 +16,7 @@ BinaryTreeNode* bt_init_node(BT_DATA_TYPE data) {
 	return new_node;
 }
 
-BinaryTreeNode* bt_add_left(BinaryTreeNode* parent_node, BT_DATA_TYPE data) {
+BinaryTreeNode* bt_add_left(BinaryTreeNode* parent_node, const BT_DATA_TYPE data) {
 	BinaryTreeNode* new_node = bt_init_node(data);
 	new_node->parent = parent_node;
 	new_node->level = parent_node->level + 1;
@@ -26,7 +26,7 @@ BinaryTreeNode* bt_add_left(BinaryTreeNode* parent_node, BT_DATA_TYPE data) {
 	return new_node;
 }
 
-BinaryTreeNode* bt_add_right(BinaryTreeNode* parent_node, BT_DATA_TYPE data) {
+BinaryTreeNode* bt_add_right(BinaryTreeNode* parent_node, const BT_DATA_TYPE data) {
 	BinaryTreeNode* new_node = bt_init_node(data);
 	new_node->parent = parent_node;
 	new_node->level = parent_node->level + 1;
@@ -36,7 +36,7 @@ BinaryTreeNode* bt_add_right(BinaryTreeNode* parent_node, BT_DATA_TYPE data) {
 	return new_node;
 }
 
-void bt_iter_elem_preorder(BinaryTreeNode* root_node, void(*function)(BinaryTreeNode*)) {
+void bt_iter_elem_preorder(BinaryTreeNode* root_node, const void(*function)(BinaryTreeNode*)) {
 	if(!root_node)
 		return;
 
@@ -45,7 +45,7 @@ void bt_iter_elem_preorder(BinaryTreeNode* root_node, void(*function)(BinaryTree
 	bt_iter_elem_preorder(root_node->right, function);
 }
 
-void bt_iter_data_preorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TYPE)) {
+void bt_iter_data_preorder(BinaryTreeNode* root_node, const void(*function)(BT_DATA_TYPE)) {
 	if(!root_node)
 		return;
 	
@@ -54,7 +54,7 @@ void bt_iter_data_preorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TY
 	bt_iter_data_preorder(root_node->right, function);
 }
 
-void bt_iter_elem_inorder(BinaryTreeNode* root_node, void(*function)(BinaryTreeNode*)) {
+void bt_iter_elem_inorder(BinaryTreeNode* root_node, const void(*function)(BinaryTreeNode*)) {
 	if(!root_node)
 		return;
 
@@ -63,7 +63,7 @@ void bt_iter_elem_inorder(BinaryTreeNode* root_node, void(*function)(BinaryTreeN
 	bt_iter_elem_inorder(root_node->right, function);
 }
 
-void bt_iter_data_inorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TYPE)) {
+void bt_iter_data_inorder(BinaryTreeNode* root_node, const void(*function)(BT_DATA_TYPE)) {
 	if(!root_node)
 		return;
 
@@ -72,7 +72,7 @@ void bt_iter_data_inorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TYP
 	bt_iter_data_inorder(root_node->right, function);
 }
 
-void bt_iter_elem_postorder(BinaryTreeNode* root_node, void(*function)(BinaryTreeNode*)) {
+void bt_iter_elem_postorder(BinaryTreeNode* root_node, const void(*function)(BinaryTreeNode*)) {
 	if(!root_node)
 		return;
 
@@ -81,7 +81,7 @@ void bt_iter_elem_postorder(BinaryTreeNode* root_node, void(*function)(BinaryTre
 	function(root_node);
 }
 
-void bt_iter_data_postorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TYPE)) {
+void bt_iter_data_postorder(BinaryTreeNode* root_node, const void(*function)(BT_DATA_TYPE)) {
 	if(!root_node)
 		return;
 
@@ -91,12 +91,12 @@ void bt_iter_data_postorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_T
 }
 
 // TODO: Implement level-order
-void bt_iter_elem_levelorder(BinaryTreeNode* root_node, void(*function)(BinaryTreeNode*)) {
+void bt_iter_elem_levelorder(BinaryTreeNode* root_node, const void(*function)(BinaryTreeNode*)) {
 
 }
 
 // TODO: Implement level-order
-void bt_iter_data_levelorder(BinaryTreeNode* root_node, void(*function)(BT_DATA_TYPE)) {
+void bt_iter_data_levelorder(BinaryTreeNode* root_node, const void(*function)(BT_DATA_TYPE)) {
 
 }
 

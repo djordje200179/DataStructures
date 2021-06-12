@@ -23,14 +23,14 @@ typedef struct PriorityQueue {
 	Priority priority;
 } PriorityQueue;
 
-PriorityQueue* pq_init(Priority priority);
-PriorityQueueNode* pq_init_node(PQ_DATA_TYPE data, int priority);
+PriorityQueue* pq_init(const Priority priority);
+PriorityQueueNode* pq_init_node(const PQ_DATA_TYPE data, const int priority);
 
-void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data, int priority);
-PriorityQueueNode* pq_peek(PriorityQueue* queue);
+void pq_push(PriorityQueue* queue, const PQ_DATA_TYPE data, const int priority);
+PriorityQueueNode* pq_peek(const PriorityQueue* queue);
 PriorityQueueNode* pq_pop(PriorityQueue* queue);
 
-bool pq_is_empty(PriorityQueue* queue);
+bool pq_is_empty(const PriorityQueue* queue);
 
 void pq_clean(PriorityQueue* queue);
 void pq_dispose(PriorityQueue* queue);

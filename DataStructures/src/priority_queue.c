@@ -1,12 +1,12 @@
 #include "pch.h"
 #include <stdlib.h>
 
-static PriorityQueueNode* get_pq_node(LinkedListNode* list_node) {
+static PriorityQueueNode* get_pq_node(const LinkedListNode* list_node) {
 	LL_DATA_TYPE data = list_node->data;
 	return (PriorityQueueNode*)data;
 }
 
-PriorityQueue* pq_init(Priority priority) {
+PriorityQueue* pq_init(const Priority priority) {
 	PriorityQueue* new_node = (PriorityQueue*)malloc(sizeof(PriorityQueue));
 
 	if(new_node) {
@@ -17,7 +17,7 @@ PriorityQueue* pq_init(Priority priority) {
 	return new_node;
 }
 
-PriorityQueueNode* pq_init_node(PQ_DATA_TYPE data, int priority) {
+PriorityQueueNode* pq_init_node(const PQ_DATA_TYPE data, const int priority) {
 	PriorityQueueNode* new_node = (PriorityQueueNode*)malloc(sizeof(PriorityQueueNode));
 
 	if(new_node) {
@@ -28,7 +28,7 @@ PriorityQueueNode* pq_init_node(PQ_DATA_TYPE data, int priority) {
 	return new_node;
 }
 
-void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data, int priority) {
+void pq_push(PriorityQueue* queue, const PQ_DATA_TYPE data, const int priority) {
 	PriorityQueueNode* queue_node = pq_init_node(data, priority);
 
 	LinkedListNode* list_node = queue->list->head;
@@ -47,7 +47,7 @@ void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data, int priority) {
 	}
 }
 
-PriorityQueueNode* pq_peek(PriorityQueue* queue) {
+PriorityQueueNode* pq_peek(const PriorityQueue* queue) {
 	return get_pq_node(queue->list->head);
 }
 
@@ -57,7 +57,7 @@ PriorityQueueNode* pq_pop(PriorityQueue* queue) {
 	return data;
 }
 
-bool pq_is_empty(PriorityQueue* queue) {
+bool pq_is_empty(const PriorityQueue* queue) {
 	return ll_is_empty(queue->list);
 }
 
