@@ -1,7 +1,7 @@
 #include "pch.h"
 #include <stdlib.h>
 
-LinkedList* ll_init_list() {
+LinkedList* ll_init() {
 	LinkedList* new_list = (LinkedList*)malloc(sizeof(LinkedList));
 
 	if(new_list) {
@@ -17,7 +17,7 @@ LinkedList* ll_init_list() {
 LinkedListNode* ll_init_node(LL_DATA_TYPE data) {
 	LinkedListNode* new_node = (LinkedListNode*)malloc(sizeof(LinkedListNode));
 
-	if (new_node) {
+	if(new_node) {
 		new_node->data = data;
 
 		new_node->prev = NULL;
@@ -28,7 +28,7 @@ LinkedListNode* ll_init_node(LL_DATA_TYPE data) {
 }
 
 LinkedListNode* ll_add_at(LinkedList* list, unsigned long index, LL_DATA_TYPE data) {
-	if (index == 0)
+	if(index == 0)
 		return ll_add_head(list, data);
 	else if(index == list->size - 1)
 		return ll_add_tail(list, data);
@@ -69,7 +69,7 @@ LinkedListNode* ll_add_after(LinkedList* list, LinkedListNode* prev_node, LL_DAT
 LinkedListNode* ll_add_head(LinkedList* list, LL_DATA_TYPE data) {
 	LinkedListNode* new_node = ll_init_node(data);
 
-	if(list->head == NULL)
+	if(!list->head)
 		list->head = list->tail = new_node;
 	else {
 		LinkedListNode* second_node = list->head;
@@ -87,7 +87,7 @@ LinkedListNode* ll_add_head(LinkedList* list, LL_DATA_TYPE data) {
 LinkedListNode* ll_add_tail(LinkedList* list, LL_DATA_TYPE data) {
 	LinkedListNode* new_node = ll_init_node(data);
 
-	if(list->head == NULL)
+	if(!list->head)
 		list->head = list->tail = new_node;
 	else {
 		LinkedListNode* second_node = list->tail;
@@ -109,7 +109,7 @@ bool ll_is_empty(LinkedList* list) {
 void ll_clean(LinkedList* list) {
 	LinkedListNode* current_node = list->head;
 
-	while (current_node) {
+	while(current_node) {
 		LinkedListNode* next_node = current_node->next;
 		free(current_node);
 		current_node = next_node;
@@ -165,7 +165,7 @@ void ll_remove_elem(LinkedList* list, LinkedListNode* node) {
 void ll_remove_head(LinkedList* list) {
 	LinkedListNode* first_node = list->head;
 	LinkedListNode* second_node = first_node->next;
-	
+
 	list->head = second_node;
 	list->size--;
 
@@ -190,7 +190,7 @@ void ll_remove_tail(LinkedList* list) {
 
 LinkedListNode* ll_get_elem(LinkedList* list, unsigned long index) {
 	LinkedListNode* current_node = list->head;
-	for (unsigned long i = 0; i < index; i++)
+	for(unsigned long i = 0; i < index; i++)
 		current_node = current_node->next;
 
 	return current_node;
@@ -201,45 +201,45 @@ LL_DATA_TYPE ll_get_data(LinkedList* list, unsigned long index) {
 }
 
 void ll_iter_elem(LinkedList* list, void(*function)(LinkedListNode*)) {
-	for (LinkedListNode* current_node = list->head; current_node; current_node = current_node->next)
+	for(LinkedListNode* current_node = list->head; current_node; current_node = current_node->next)
 		function(current_node);
 }
 
 void ll_iter_elem_index(LinkedList* list, void (*function)(LinkedListNode*, unsigned long)) {
 	unsigned long i = 0;
-	for (LinkedListNode* current_node = list->head; current_node; current_node = current_node->next, i++)
+	for(LinkedListNode* current_node = list->head; current_node; current_node = current_node->next, i++)
 		function(current_node, i);
 }
 
 void ll_iter_data(LinkedList* list, void(*function)(LL_DATA_TYPE)) {
-	for (LinkedListNode* current_node = list->head; current_node; current_node = current_node->next)
+	for(LinkedListNode* current_node = list->head; current_node; current_node = current_node->next)
 		function(current_node->data);
 }
 
 void ll_iter_data_index(LinkedList* list, void (*function)(LL_DATA_TYPE, unsigned long)) {
 	unsigned long i = 0;
-	for (LinkedListNode* current_node = list->head; current_node; current_node = current_node->next, i++)
+	for(LinkedListNode* current_node = list->head; current_node; current_node = current_node->next, i++)
 		function(current_node->data, i);
 }
 
 void ll_iter_reverse_elem(LinkedList* list, void(*function)(LinkedListNode*)) {
-	for (LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev)
+	for(LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev)
 		function(current_node);
 }
 
 void ll_iter_reverse_elem_index(LinkedList* list, void (*function)(LinkedListNode*, unsigned long)) {
 	unsigned long i = list->size - 1;
-	for (LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev, i--)
+	for(LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev, i--)
 		function(current_node, i);
 }
 
 void ll_iter_reverse_data(LinkedList* list, void(*function)(LL_DATA_TYPE)) {
-	for (LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev)
+	for(LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev)
 		function(current_node->data);
 }
 
 void ll_iter_reverse_data_index(LinkedList* list, void (*function)(LL_DATA_TYPE, unsigned long)) {
 	unsigned long i = list->size - 1;
-	for (LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev, i--)
+	for(LinkedListNode* current_node = list->tail; current_node; current_node = current_node->prev, i--)
 		function(current_node->data, i);
 }

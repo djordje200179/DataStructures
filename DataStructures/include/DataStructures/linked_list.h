@@ -19,7 +19,7 @@ typedef struct LinkedList {
 	LinkedListNode* tail;
 } LinkedList;
 
-LinkedList* ll_init_list();
+LinkedList* ll_init();
 LinkedListNode* ll_init_node(LL_DATA_TYPE data);
 
 LinkedListNode* ll_add_at(LinkedList* list, unsigned long index, LL_DATA_TYPE data);
@@ -49,4 +49,4 @@ void ll_iter_reverse_elem_index(LinkedList* list, void (*function)(LinkedListNod
 void ll_iter_reverse_data(LinkedList* list, void (*function)(LL_DATA_TYPE));
 void ll_iter_reverse_data_index(LinkedList* list, void (*function)(LL_DATA_TYPE, unsigned long));
 
-#endif //LINKED_LIST
+#endif // LINKED_LIST

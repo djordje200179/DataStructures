@@ -8,4 +8,4 @@ void pq_test();
 
 void bt_test();
 
-#endif //TESTS
+#endif // TESTS

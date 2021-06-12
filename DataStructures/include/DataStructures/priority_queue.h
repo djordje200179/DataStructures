@@ -6,9 +6,9 @@
 
 typedef void* PQ_DATA_TYPE;
 
-typedef enum Priority { 
-	SMALLER_FIRST, 
-	BIGGER_FIRST 
+typedef enum Priority {
+	SMALLER_FIRST,
+	BIGGER_FIRST
 } Priority;
 
 typedef struct PriorityQueueNode {
@@ -35,4 +35,4 @@ bool pq_is_empty(PriorityQueue* queue);
 void pq_clean(PriorityQueue* queue);
 void pq_dispose(PriorityQueue* queue);
 
-#endif //PRIORITY_QUEUE
+#endif // PRIORITY_QUEUE

@@ -1,7 +1,7 @@
 #include "pch.h"
 
 Stack* s_init() {
-	return ll_init_list();
+	return ll_init();
 }
 
 void s_push(Stack* stack, STACK_DATA_TYPE data) {
@@ -9,7 +9,7 @@ void s_push(Stack* stack, STACK_DATA_TYPE data) {
 }
 
 STACK_DATA_TYPE s_peek(Stack* stack) {
-	return stack->head->data;
+	return stack->tail->data;
 }
 
 STACK_DATA_TYPE s_pop(Stack* stack) {

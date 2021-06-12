@@ -1,22 +1,22 @@
-#include "linked_list.h"
+#include <DataStructures/linked_list.h>
 #include "misc.h"
 #include <stdio.h>
 
-void print_int_index(void* data, unsigned long index); 
-
 void ll_test() {
-	const int data[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+	set_text_color(GREEN_COLOR);
+	printf("Linked list:\n");
+	set_text_color(NO_COLOR);
 
-	LinkedList* list = ll_init_list();
+	LinkedList* list = ll_init();
+
 	for(int i = 0; i < 16; i++)
-		ll_add_tail(list, &data[i % 8]);
+		ll_add_tail(list, int_to_ptr(i % 8));
 
 	ll_remove_at(list, 4);
 	ll_remove_head(list);
-	ll_add_head(list, &data[4]);
-	ll_add_at(list, 4, &data[0]);
+	ll_add_head(list, int_to_ptr(4));
+	ll_add_at(list, 4, int_to_ptr(0));
 
-	printf("Doubly linked list:\n");
 	printf("--head--\n");
 	ll_iter_data_index(list, print_int_index);
 	printf("---tail---\n");

@@ -19,4 +19,4 @@ bool q_is_empty(Queue* queue);
 void q_clean(Queue* queue);
 void q_dispose(Queue* queue);
 
-#endif //QUEUE
+#endif // QUEUE

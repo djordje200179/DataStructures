@@ -10,7 +10,7 @@ PriorityQueue* pq_init(Priority priority) {
 	PriorityQueue* new_node = (PriorityQueue*)malloc(sizeof(PriorityQueue));
 
 	if(new_node) {
-		new_node->list = ll_init_list();
+		new_node->list = ll_init();
 		new_node->priority = priority;
 	}
 
@@ -38,9 +38,9 @@ void pq_push(PriorityQueue* queue, PQ_DATA_TYPE data, int priority) {
 		ll_add_head(queue->list, queue_node);
 	else {
 		while(list_node->next && (
-				(queue->priority == SMALLER_FIRST && priority > get_pq_node(list_node->next)->priority) ||
-				(queue->priority == BIGGER_FIRST && priority < get_pq_node(list_node->next)->priority))
-			 )
+			(queue->priority == SMALLER_FIRST && priority > get_pq_node(list_node->next)->priority) ||
+			(queue->priority == BIGGER_FIRST && priority < get_pq_node(list_node->next)->priority))
+			)
 			list_node = list_node->next;
 
 		ll_add_after(queue->list, list_node, queue_node);

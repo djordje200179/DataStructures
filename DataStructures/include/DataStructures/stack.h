@@ -19,4 +19,4 @@ bool s_is_empty(Stack* stack);
 void s_clean(Stack* stack);
 void s_dispose(Stack* stack);
 
-#endif //STACK
+#endif // STACK

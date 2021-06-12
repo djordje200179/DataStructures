@@ -4,6 +4,8 @@
 
 int main() {
 	ll_test();
+	s_test();
+	q_test();
 	pq_test();
 
 	bt_test();

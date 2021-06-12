@@ -1,7 +1,7 @@
 #include "pch.h"
 
 Queue* q_init() {
-	return ll_init_list();
+	return ll_init();
 }
 
 void q_push(Queue* queue, QUEUE_DATA_TYPE data) {

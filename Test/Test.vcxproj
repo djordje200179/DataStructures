@@ -96,7 +96,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\Trees;C:\Programiranje\Vjezbe\DataStructures\LinearStructures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\DataStructures\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
@@ -115,7 +115,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\Trees;C:\Programiranje\Vjezbe\DataStructures\LinearStructures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\DataStructures\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
@@ -134,7 +134,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\Trees;C:\Programiranje\Vjezbe\DataStructures\LinearStructures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\DataStructures\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
@@ -153,7 +153,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\Trees;C:\Programiranje\Vjezbe\DataStructures\LinearStructures;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programiranje\Vjezbe\DataStructures\DataStructures\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <SuppressStartupBanner>true</SuppressStartupBanner>
     </ClCompile>
     <Link>
@@ -172,13 +172,12 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="misc.c" />
     <ClCompile Include="pq_test.c" />
+    <ClCompile Include="q_test.c" />
+    <ClCompile Include="s_test.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LinearStructures\LinearStructures.vcxproj">
+    <ProjectReference Include="..\DataStructures\DataStructures.vcxproj">
       <Project>{6d8576a3-3884-492b-86c2-4f60b68abb59}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Trees\Trees.vcxproj">
-      <Project>{c6fbd733-e0ad-4a4e-be3a-e40865c54a64}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
